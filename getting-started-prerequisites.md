@@ -6,3 +6,10 @@ To check if everything is working correctly, under command line, type `az login`
 
 #Azure account
 If you do not have an azure account yet, you can start for free [here](https://azure.microsoft.com/en-us/free/). After pin your credit card, you will be rewarded with a €170 credit for a 30 days exploration.
+
+#Test Resource Group
+Azure resource group is an object which does not cost you anything. It only purpouse is to group all your components into logic part. You can instantiate a group with the following command:
+`az group create --name myResourceGroup --location eastus`
+
+##Docker CE
+For this demo, Docker Community Edition is a must have. You can download it from [here](https://www.docker.com/get-started). To be able to build and run a linux images, you have to enable virtualization and have a hyper-v support.
