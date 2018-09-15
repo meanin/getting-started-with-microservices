@@ -24,3 +24,19 @@
 `az container create --resource-group getting-started-with-microservices --name gettingstartedinstance --image gettingstartedregistry.azurecr.io/getting-started-app:latest --registry-username gettingstartedregistry --registry-password <acrPassword> --dns-name-label getting-started-instace --ports 80`
 
 `http://getting-started-instace.westeurope.azurecontainer.io/api/helloworld`
+
+##Create Service Principal for role base access 
+`az ad sp create-for-rbac --skip-assignment`
+
+##Connect RBAC with Registry
+`az acr show --resource-group getting-started-with-microservices --name gettingstartedregistry --query "id" --output tsv`
+
+`az role assignment create --assignee <appId> --scope <acrId> --role Reader`
+
+##Create Azure Kubernetes Service
+`az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1 --service-principal <appId> --client-secret <password> --generate-ssh-keys`
+
+##Connecting to the AKS clustes
+`az aks get-credentials --resource-group getting-started-with-microservices --name gettingstartedcluster`
+
+`kubectl get nodes`

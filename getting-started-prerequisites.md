@@ -13,3 +13,6 @@ Azure resource group is an object which does not cost you anything. It only purp
 
 ##Docker CE
 For this demo, Docker Community Edition is a must have. You can download it from [here](https://www.docker.com/get-started). To be able to build and run a linux images, you have to enable virtualization and have a hyper-v support.
+
+##Azure CLI AKS
+To be able to communicate with a kubernetes cluster in azure, you have to install cli. It is possible by running this command: `az aks install-cli` on a machine with an Azure CLI installed previously.
