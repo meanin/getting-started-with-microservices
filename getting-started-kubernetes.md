@@ -37,5 +37,27 @@ Later from the command prompt, you can navigate / pass instruction to a cluster 
 After a connection was successfully established, type `kubectl get nodes` to list all of you nodes in the cluster. You should see number of nodes exactly same as specified during cluster creation.
 
 ##Deploying objects to kubernetes
-When everything is set up, you can finally deploy some objects to you cluster. From `kubernetes` directory you can select `deployment.yaml`. This is a file which describe a whole deployment object with set replicas
+When everything is set up, you can finally deploy some objects to you cluster. From `kubernetes` directory you can select `deployment.yaml`. This is a file which describe a whole deployment object with set replicas. The command that you are looking for is: `kubectl apply -f <file>.yaml`. 
 
+Check if your application started properly with this command: `kubectl get deployment` - it will show current state of your deployment object. If desire pod number is equal to current one, everything went right. Now, how to get your application? 
+
+It is working somewhere, but without ip address or domain name, you are not able to get output from it. Kubernetes has specific object type which make it possible. Lets deploy it - `service.yaml`. It will take a while, when your service gets a public IP address. The command `kubectl get svc -w` will take services status up to date in your command line. When public IP address shows up, take it and put it hete: `<IPAddress>/api/helloworld`. 
+
+Is it working now? Magic ;)
+
+##Cleanup
+######*If you want to continue with extras, skip this step and go directly there.*
+If you remember, I told you that the Azure handles creation infrastructure behind the scen. Now it is a time to clean this up. As in Docker demo case, delete resource group with ACR:
+`az group delete --name <resourceGroupName> --yes`
+Then, take care about autocreated resource group. Its name should be like this:
+`MC_<resourceGroupName>_<clusterName>_westeurope`
+
+##Extras
+After made all steps from this specific demo file, I leave my Azure Subscription for a day, again. This time, everything costs a little bit more. For a short demo it takes 20 3 ¢ (euro cents).
+
+##Extras II
+Now think about your persistent data? How to handle it in a microservices manner? How to store it inside a Docker/Kubernetes architecture? There is a way. Until now, we were working on something that called a stateless service. Oposite that, there are stateful services. These are application, that have persistent data stored somewhere. From my experience most common way is to attach a persistent volume to the docker image. On a local machine, you will isolate some operating system disk space with a working container. In a cloud environment, like a Kubernetes on an Azure, you have to provide a disk, or a way that, Kubernetes on its own will do that on your behalf. 
+
+Kubernetes `Statefulsets` besides same attached volume between containers lifetimes, consists of stable and unique network identifiers (inside Kubernetes network) and ordered deployments/scaling/deletion/rolling updates.
+
+Take a look into kubernetes directory again. There should be defined simple stateful set. Remove deployment first and create stateful set from a file. Go to the browser and navigate to you container application. Interesting, huh? 

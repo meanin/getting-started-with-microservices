@@ -34,9 +34,16 @@
 `az role assignment create --assignee <appId> --scope <acrId> --role Reader`
 
 ##Create Azure Kubernetes Service
-`az aks create --resource-group myResourceGroup --name myAKSCluster --node-count 1 --service-principal <appId> --client-secret <password> --generate-ssh-keys`
+`az aks create --resource-group getting-started-with-microservices --name gettingstartedcluster --node-count 1 --service-principal <appId> --client-secret <password> --generate-ssh-keys`
 
 ##Connecting to the AKS clustes
 `az aks get-credentials --resource-group getting-started-with-microservices --name gettingstartedcluster`
 
 `kubectl get nodes`
+
+##Kubectl commands
+`kubectl apply -f kubernetes\deployment.yaml`
+`kubectl get deployments`
+`kubectl apply -f kubernetes\service.yaml`
+`kubectl get svc -w`
+`kubectl scale deployment scaffolded-deployment --replicas=2`

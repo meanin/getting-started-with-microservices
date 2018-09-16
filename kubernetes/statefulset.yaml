@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: scaffolded-statefulset
+spec:
+  selector:
+    matchLabels:
+      app: scaffolded-web-api
+  serviceName: scaffolded-svc
+  replicas: 1
+  updateStrategy:
+    type: RollingUpdate
+  podManagementPolicy: Parallel
+  template:
+    metadata:
+      labels:
+        app: scaffolded-web-api
+    spec:
+      containers:
+      - name: scaffolded-pod
+        image: gettingstartedregistry.azurecr.io/getting-started-app:latest
+        ports:
+        - containerPort: 80

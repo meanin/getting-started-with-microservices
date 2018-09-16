@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ScaffoldedWebApi.Controllers
 {
@@ -9,7 +10,7 @@ namespace ScaffoldedWebApi.Controllers
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return "Greetings from Hello World Controller!";
+            return $"Greetings from Hello World Controller on a {Environment.GetEnvironmentVariable("HOSTNAME")} Kubernetes POD!";
         }
     }
 }
