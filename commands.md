@@ -5,7 +5,7 @@
 `az acr create --resource-group getting-started-with-microservices --name gettingstartedregistry --sku Basic`
 
 ##Log into the registry
-`az acr login --name gettingstartedregistry `
+`az acr login --name gettingstartedregistry`
 
 ##Build a docker image
 `docker build -f ScaffoldedWebApi\Dockerfile -t "getting-started-app:latest" .`

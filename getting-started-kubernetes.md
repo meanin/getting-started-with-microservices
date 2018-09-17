@@ -53,7 +53,7 @@ Then, take care about autocreated resource group. Its name should be like this:
 `MC_<resourceGroupName>_<clusterName>_westeurope`
 
 ##Extras
-After made all steps from this specific demo file, I leave my Azure Subscription for a day, again. This time, everything costs a little bit more. For a short demo it takes 20 3 ¢ (euro cents).
+After made all steps from this specific demo file, I leave my Azure Subscription for a day, again. This time, everything costs a little bit more. For a short demo it takes 20 ¢ (euro cents).
 
 ##Extras II
 Now think about your persistent data? How to handle it in a microservices manner? How to store it inside a Docker/Kubernetes architecture? There is a way. Until now, we were working on something that called a stateless service. Oposite that, there are stateful services. These are application, that have persistent data stored somewhere. From my experience most common way is to attach a persistent volume to the docker image. On a local machine, you will isolate some operating system disk space with a working container. In a cloud environment, like a Kubernetes on an Azure, you have to provide a disk, or a way that, Kubernetes on its own will do that on your behalf. 
