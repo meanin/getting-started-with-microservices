@@ -61,3 +61,12 @@ Now think about your persistent data? How to handle it in a microservices manner
 Kubernetes `Statefulsets` besides same attached volume between containers lifetimes, consists of stable and unique network identifiers (inside Kubernetes network) and ordered deployments/scaling/deletion/rolling updates.
 
 Take a look into kubernetes directory again. There should be defined simple stateful set. Remove deployment first and create stateful set from a file. Go to the browser and navigate to you container application. Interesting, huh? 
+
+#### Navigation:
+
+0. [Readme](README.md)
+1. [Prerequisites](01-getting-started-prerequisites.md)
+2. [Docker](02-getting-started-docker.md)
+3. [Kubernetes](03-getting-started-kubernetes.md)
+...
+10. [Commands](10-commands.md)

@@ -44,3 +44,12 @@ If you want to free your resource and maybe more important reduce costs, you hav
 
 ## Extras
 After made all steps from this specific demo file, I leave my Azure Subscription for a day (Azure costs are calculated daily). Next day, I checked bill and I was surprised, because this whole play cost me exatcly 3 ¢ (euro cents) :)
+
+#### Navigation:
+
+0. [Readme](README.md)
+1. [Prerequisites](01-getting-started-prerequisites.md)
+2. [Docker](02-getting-started-docker.md)
+3. [Kubernetes](03-getting-started-kubernetes.md)
+...
+10. [Commands](10-commands.md)

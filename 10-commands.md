@@ -47,3 +47,12 @@
 `kubectl apply -f kubernetes\service.yaml`
 `kubectl get svc -w`
 `kubectl scale deployment scaffolded-deployment --replicas=2`
+
+#### Navigation:
+
+0. [Readme](README.md)
+1. [Prerequisites](01-getting-started-prerequisites.md)
+2. [Docker](02-getting-started-docker.md)
+3. [Kubernetes](03-getting-started-kubernetes.md)
+...
+10. [Commands](10-commands.md)
