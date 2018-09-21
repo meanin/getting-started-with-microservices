@@ -23,5 +23,4 @@ To be able to communicate with a kubernetes cluster in azure, you have to instal
 1. [Prerequisites](01-getting-started-prerequisites.md)
 2. [Docker](02-getting-started-docker.md)
 3. [Kubernetes](03-getting-started-kubernetes.md)
-...
 10. [Commands](10-commands.md)

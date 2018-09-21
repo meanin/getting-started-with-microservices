@@ -51,5 +51,4 @@ After made all steps from this specific demo file, I leave my Azure Subscription
 1. [Prerequisites](01-getting-started-prerequisites.md)
 2. [Docker](02-getting-started-docker.md)
 3. [Kubernetes](03-getting-started-kubernetes.md)
-...
 10. [Commands](10-commands.md)
