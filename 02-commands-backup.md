@@ -31,10 +31,10 @@ az ad sp create-for-rbac --skip-assignment
 ## Connect RBAC with Registry
 az acr show --resource-group getting-started-with-microservices-backup --name gettingstartedregistrybackup --query "id" --output tsv
 
-az role assignment create --assignee d151991c-0676-4878-9985-3b00f562c6b3 --scope /subscriptions/8d72ff15-350d-47c0-b248-319580724285/resourceGroups/getting-started-with-microservices-backup/providers/Microsoft.ContainerRegistry/registries/gettingstartedregistrybackup --role Reader
+az role assignment create --assignee <appId> --scope <acrId> --role Reader
 
 ## Create Azure Kubernetes Service
-az aks create --resource-group getting-started-with-microservices-backup --name ak8sbackup --node-count 1 --service-principal d151991c-0676-4878-9985-3b00f562c6b3 --client-secret a0fc54c2-8ee8-4d71-a65e-0242d34dd31d --generate-ssh-keys
+az aks create --resource-group getting-started-with-microservices-backup --name ak8sbackup --node-count 1 --service-principal <appId> --client-secret <password> --generate-ssh-keys
 
 ## Connecting to the AKS clustes
 az aks get-credentials --resource-group getting-started-with-microservices-backup --name ak8sbackup
