@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: scaffolded-deployment
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: scaffolded-web-api
+    spec:
+      containers:
+      - name: scaffolded-pod
+        image: gettingstartedregistrybackup.azurecr.io/getting-started-app:latest
+        ports:
+        - containerPort: 80

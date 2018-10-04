@@ -10,7 +10,7 @@ namespace ScaffoldedWebApi.Controllers
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return $"Greetings from Hello World Controller on a {Environment.GetEnvironmentVariable("HOSTNAME")} Kubernetes POD!";
+            return $"Greetings from Hello World Controller on a {Environment.GetEnvironmentVariable("HOSTNAME")}!";
         }
     }
 }
