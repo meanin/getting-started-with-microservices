@@ -42,19 +42,19 @@ az aks get-credentials --resource-group getting-started-with-microservices-backu
 kubectl get nodes
 
 ## Kubectl commands
-kubectl apply -f kubernetes\deployment.1.yaml
+kubectl apply -f kubernetes\backup.deployment.yaml
 kubectl get deployments
-kubectl apply -f kubernetes\service.1.yaml
+kubectl apply -f kubernetes\backup.service.yaml
 kubectl get svc -w
 kubectl scale deployment scaffolded-deployment --replicas=2
 kubectl delete deployment scaffolded-deployment
-kubectl apply -f kubernetes\statefulset.1.yaml
-kubectl scale deployment scaffolded-statefulset --replicas=2
+kubectl apply -f kubernetes\backup.statefulset.yaml
+kubectl scale statefulset scaffolded-statefulset --replicas=2
 
 #### Navigation:
 
 0. [Readme](README.md)
-1. [Prerequisites](01-getting-started-prerequisites.md)
-2. [Docker](02-getting-started-docker.md)
-3. [Kubernetes](03-getting-started-kubernetes.md)
-10. [Commands](10-commands.md)
+1. [Prerequisites](10-getting-started-prerequisites.md)
+2. [Docker](20-getting-started-docker.md)
+3. [Kubernetes](30-getting-started-kubernetes.md)
+10. [Commands](01-commands.md)
